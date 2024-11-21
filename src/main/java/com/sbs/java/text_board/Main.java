@@ -21,7 +21,7 @@ public class Main {
 
                 int id = ++lastArticleId;
 
-                Article article = new Article();
+                Article article = new Article(id, subject, content);
                 article.id = id;
                 article.subject = subject;
                 article.content = content;
@@ -47,6 +47,12 @@ class Article {
     String subject;
     String content;
 
+    public Article(int id, String subject, String content) {
+        this.id = id;
+        this.subject = subject;
+        this.content = content;
+    }
+    
     @Override
     public String toString() {
         return "{id : %d, subject: \"%s\", content: \"%s\"}".formatted(id, subject, content);
