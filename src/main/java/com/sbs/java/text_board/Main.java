@@ -36,8 +36,6 @@ public class Main {
             else {
                 System.out.println("잘못된 명령어입니다.");
             }
-
-            System.out.printf("입력받은 명령어 : %s\n",cmd);
         }
         System.out.println("== 자바 텍스트 게시판 종료 == ");
         sc.close();
@@ -48,4 +46,9 @@ class Article {
     int id;
     String subject;
     String content;
+
+    @Override
+    public String toString() {
+        return "{id : %d, subject: \"%s\", content: \"%s\"}".formatted(id, subject, content);
+    }
 }
