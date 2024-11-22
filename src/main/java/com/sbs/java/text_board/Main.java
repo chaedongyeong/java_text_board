@@ -5,12 +5,21 @@ import java.util.List;
 import java.util.Scanner;
 
 public class Main {
-    public static void  main(String[] args) {
+
+    public static void makeTestData(List<Article> articles) {
+        articles.add(new Article(1, "제목1", "내용1"));
+        articles.add(new Article(2, "제목2", "내용2"));
+        articles.add(new Article(3, "제목3", "내용3"));
+    }
+    public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("== 자바 텍스트 게시판 시작 ==");
         int lastArticleId = 0;
         Article lastArticle = null;
         List<Article> articles = new ArrayList<>();
+
+        makeTestData(articles);
+
+        System.out.println("== 자바 텍스트 게시판 시작 ==");
         while (true) {
             System.out.print("명령) ");
             String cmd = sc.nextLine();
