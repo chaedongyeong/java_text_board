@@ -19,6 +19,9 @@ public class Main {
 
         makeTestData(articles);
 
+        if (articles.size() > 0) {
+            lastArticleId = articles.get(articles.size() - 1).id;
+        }
         System.out.println("== 자바 텍스트 게시판 시작 ==");
         while (true) {
             System.out.print("명령) ");
@@ -38,7 +41,6 @@ public class Main {
 
                 articles.add(article);
 
-                System.out.println("생성된 게시물 객체 : " + article);
                 System.out.printf("%d번 게시물이 등록되었습니다.\n", article.id);
             }
             else if (cmd.equals("/usr/article/list")) {
